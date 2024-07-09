@@ -1,18 +1,18 @@
 import React from 'react'
-import product1 from './Assets/Frontend_Assets/product_1.png';
-const Product_card = () => {
+import {Link} from 'react-router-dom';
+const Product_card = (props) => {
   return (
-    <div>
-      <div className='px-25 py-25 border-2 flex-col flex gap-4'>
+    <div className='px-25 py-25 border-2 flex-col flex gap-4'>
+      <div >
                 <div>
-                    <img src={product1} alt="" />
+                    <Link to={`/product/${props.id}`}><img src={props.image} alt="" onClick={window.scrollTo(0,0)} /></Link>
                 </div>
                 <div>
-                    <p>Lorem ipsum dolor sit amet consectetur</p>
+                    <p>{props.name}</p>
                 </div>
                 <div className='flex gap-4'>
-                    <p>$80</p>
-                    <p><s>$100</s></p>
+                    <p>{props.new_price}</p>
+                    <p><s>{props.old_price}</s></p>
                 </div>
             </div>
     </div>
